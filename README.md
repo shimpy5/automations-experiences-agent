@@ -5,7 +5,9 @@ night"* — and an **agent** sets it up in your real home: it looks up a matchin
 pattern, reads your actual devices, builds the scene, runs it, and when a device
 doesn't respond it decides on its own whether to retry, substitute, or skip.
 
-This is the agent counterpart to a grounded RAG pipeline. The RAG version makes
+This is the agent counterpart to a grounded RAG pipeline —
+[smartthings-experience-engine](https://github.com/shimpy5/smartthings-experience-engine).
+The RAG version makes
 **one** model call that returns a finished scene, which code then executes. Here
 the model runs a **tool loop**: it chooses which tool to call and in what order,
 sees each result, and reacts — including to failures. The model supplies the
@@ -107,3 +109,11 @@ The only dependency is the `anthropic` SDK; everything else is plain Python. The
 code is synchronous and the home is in-memory, to keep the agent easy to read
 and run while learning. The clean seam at `smarthome/` is where a real
 SmartThings backend would slot in.
+
+## See also
+
+- **[smartthings-experience-engine](https://github.com/shimpy5/smartthings-experience-engine)**
+  — the same problem solved as a grounded RAG pipeline: one model call returns a
+  validated scene that code executes, with a full experience lifecycle (enter,
+  event-driven maintain, restore). Same idea, different architecture — one model
+  call vs. the model driving a tool loop.
