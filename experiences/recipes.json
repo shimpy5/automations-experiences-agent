@@ -1,0 +1,72 @@
+{
+  "recipes": [
+    {
+      "id": "movie_night",
+      "name": "Movie Night",
+      "keywords": ["movie", "film", "cinema", "cozy", "watch", "netflix", "show", "theater"],
+      "description": "Dim, warm lighting with the shades down and the TV on for watching something.",
+      "steps": [
+        {"capability": "switchLevel", "command": "setLevel", "args": {"level": 15}, "room": "Living Room", "reason": "dim the lights low"},
+        {"capability": "colorTemperature", "command": "setColorTemperature", "args": {"temperature": 2700}, "room": "Living Room", "reason": "warm, cozy color"},
+        {"capability": "windowShade", "command": "close", "room": "Living Room", "reason": "block outside light"},
+        {"capability": "switch", "command": "on", "room": "Living Room", "device_hint": "TV", "reason": "turn on the TV"},
+        {"capability": "thermostatHeatingSetpoint", "command": "setHeatingSetpoint", "args": {"setpoint": 70}, "room": "Hallway", "reason": "warm the room slightly"}
+      ]
+    },
+    {
+      "id": "wind_down",
+      "name": "Wind Down",
+      "keywords": ["sleep", "bed", "bedtime", "night", "relax", "wind down", "tired", "goodnight"],
+      "description": "Soft, very warm bedroom light, shades closed, house cooled and secured for sleep.",
+      "steps": [
+        {"capability": "switchLevel", "command": "setLevel", "args": {"level": 15}, "room": "Bedroom", "reason": "dim the bedroom light low"},
+        {"capability": "colorTemperature", "command": "setColorTemperature", "args": {"temperature": 2400}, "room": "Bedroom", "reason": "very warm, sleepy light"},
+        {"capability": "windowShade", "command": "close", "room": "Bedroom", "reason": "close the shades"},
+        {"capability": "switch", "command": "off", "room": "Kitchen", "device_hint": "Light", "reason": "turn off the kitchen light"},
+        {"capability": "thermostatHeatingSetpoint", "command": "setHeatingSetpoint", "args": {"setpoint": 66}, "room": "Hallway", "reason": "cooler for sleeping"},
+        {"capability": "lock", "command": "lock", "room": "Hallway", "reason": "lock the front door"}
+      ]
+    },
+    {
+      "id": "good_morning",
+      "name": "Good Morning",
+      "keywords": ["morning", "wake", "wake up", "sunrise", "coffee", "start the day", "get up"],
+      "description": "Open the shades, gentle energizing light, coffee started, house warmed.",
+      "steps": [
+        {"capability": "windowShade", "command": "open", "room": "Bedroom", "reason": "let the morning light in"},
+        {"capability": "switchLevel", "command": "setLevel", "args": {"level": 60}, "room": "Bedroom", "reason": "gentle wake-up light"},
+        {"capability": "colorTemperature", "command": "setColorTemperature", "args": {"temperature": 4500}, "room": "Bedroom", "reason": "cooler, energizing color"},
+        {"capability": "switch", "command": "on", "room": "Kitchen", "device_hint": "Light", "reason": "turn on the kitchen light"},
+        {"capability": "switch", "command": "on", "room": "Kitchen", "device_hint": "Coffee", "reason": "start the coffee"},
+        {"capability": "thermostatHeatingSetpoint", "command": "setHeatingSetpoint", "args": {"setpoint": 70}, "room": "Hallway", "reason": "warm the house up"}
+      ]
+    },
+    {
+      "id": "leaving_home",
+      "name": "Leaving Home",
+      "keywords": ["leaving", "leave", "away", "out", "gone", "goodbye", "work", "lock up"],
+      "description": "Everything off, shades closed, thermostat set back, doors locked.",
+      "steps": [
+        {"capability": "switch", "command": "off", "room": "Living Room", "device_hint": "Ceiling", "reason": "turn off the ceiling light"},
+        {"capability": "switch", "command": "off", "room": "Living Room", "device_hint": "Lamp", "reason": "turn off the lamp"},
+        {"capability": "switch", "command": "off", "room": "Kitchen", "device_hint": "Light", "reason": "turn off the kitchen light"},
+        {"capability": "switch", "command": "off", "room": "Living Room", "device_hint": "TV", "reason": "turn off the TV"},
+        {"capability": "windowShade", "command": "close", "room": "Living Room", "reason": "close the shades"},
+        {"capability": "thermostatHeatingSetpoint", "command": "setHeatingSetpoint", "args": {"setpoint": 62}, "room": "Hallway", "reason": "energy setback while away"},
+        {"capability": "lock", "command": "lock", "room": "Hallway", "reason": "lock the front door"}
+      ]
+    },
+    {
+      "id": "focus",
+      "name": "Focus",
+      "keywords": ["focus", "work", "read", "reading", "study", "concentrate", "productive"],
+      "description": "Bright, cool light with natural daylight and distractions off.",
+      "steps": [
+        {"capability": "switchLevel", "command": "setLevel", "args": {"level": 100}, "room": "Living Room", "reason": "bright light to focus"},
+        {"capability": "colorTemperature", "command": "setColorTemperature", "args": {"temperature": 5000}, "room": "Living Room", "reason": "cool, alert light"},
+        {"capability": "windowShade", "command": "open", "room": "Living Room", "reason": "let natural light in"},
+        {"capability": "switch", "command": "off", "room": "Living Room", "device_hint": "TV", "reason": "turn off the TV to cut distraction"}
+      ]
+    }
+  ]
+}
